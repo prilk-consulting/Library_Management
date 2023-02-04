@@ -1,0 +1,42 @@
+{%  extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- section start -->
+<section>
+    <div class="collection-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-10 col-xs-12">
+                    <div class="product-right-slick">
+                        <div><img src="{{ image }}" alt="{{ title }}" style="width: 25rem;height:22rem;" class="img-fluid blur-up lazyload image_zoom_cls-0">
+                          </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-right">
+                        <h2>{{ article_name }}</h2>
+                        <h3 class="mt-4">By {{ author }}</h3>
+                        <div class="border-product mt-4">
+                            <div>
+                                {%- if status == 'Available' -%}
+                                <span class="badge badge-success">Available</span>
+                                {%- elif status == 'Issued' -%}
+                                <span class="badge badge-primary">Issued</span>
+                                {%- endif -%}
+                            </div>
+                            <div class="mt-4">
+                                <div>Publisher: <strong>{{ publisher }}</strong></div>
+                                <div>ISBN: <strong>{{ isbn }}</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-4">
+                <p>{{ description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+{% endblock %}
